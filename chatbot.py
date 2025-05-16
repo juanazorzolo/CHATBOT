@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Estado de cada usuario
 usuarios = {}
 
-# Cargar respuestas desde archivo JSON
+# Cargar respuestas desde el archivo JSON
 with open("respuestas.json", "r", encoding="utf-8") as f:
     datos = json.load(f)
 
@@ -30,7 +30,7 @@ def whatsapp():
     elif estado["estado"] == "esperando_opcion":
         if msg in ['1', '2', '3']:
             mensaje = respuestas[msg]
-            mensaje += f"\n\n¿Tenés otra consulta? (si/no)"
+            mensaje += f"\n\n{respuestas['otra_consulta']}"
             estado["estado"] = "otra_consulta"
         elif msg == '4':
             mensaje = respuestas["marca_prompt"]
@@ -40,7 +40,7 @@ def whatsapp():
 
     elif estado["estado"] == "otra_consulta":
         if msg in ['si', 'sí']:
-            mensaje = "🔁 Volvemos al menú principal:\n" + menu
+            mensaje = menu
             estado["estado"] = "esperando_opcion"
         elif msg == 'no':
             mensaje = respuestas["despedida"]
@@ -49,20 +49,18 @@ def whatsapp():
             mensaje = "❓ Por favor respondé con *sí* o *no*."
 
     elif estado["estado"] == "marca":
-        marca_cap = msg.capitalize()
-        if marca_cap in marcas:
-            estado["marca"] = marca_cap
+        if msg.capitalize() in marcas:
+            estado["marca"] = msg.capitalize()
             mensaje = respuestas["modelo_prompt"]
             estado["estado"] = "modelo"
         else:
-            lista_marcas = ", ".join(marcas)
-            mensaje = f"❌ Marca no válida. Las marcas disponibles son:\n{lista_marcas}\n\nPor favor, ingresá una marca válida."
+            mensaje = "❌ Marca no válida. Ingresá una marca válida (Ej: Toyota, Nissan)."
 
     elif estado["estado"] == "modelo":
         estado["modelo"] = msg
         mensaje = f"📋 Marca: *{estado['marca']}*, Modelo: *{estado['modelo']}*\n"
         mensaje += respuestas["consulta_derivada"]
-        mensaje += f"\n\n¿Tenés otra consulta? (si/no)"
+        mensaje += f"\n\n{respuestas['otra_consulta']}"
         estado["estado"] = "otra_consulta"
 
     elif estado["estado"] == "finalizado":
@@ -74,6 +72,9 @@ def whatsapp():
 
     usuarios[phone] = estado
     response.message(mensaje)
+    print(f"Mensaje recibido: {msg}")
+    print(f"Estado actual: {estado}")
+    print(f"Mensaje de respuesta: {mensaje}")
     return str(response)
 
 if __name__ == "__main__":
