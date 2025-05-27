@@ -2,6 +2,19 @@
 
 Este es un chatbot desarrollado para **Sol Repuestos**, un negocio dedicado a la venta de repuestos automotores. Su objetivo es asistir a los clientes de forma automatizada, brindando información sobre productos, horarios, formas de contacto, ubicación y respuestas frecuentes.
 
+## 👤 Autor
+
+Juana Zorzolo Rubio
+
+📊 Estudiante avanzada de Tecnicatura Universitaria en IA
+
+✉️ Contacto:
+
+Si querés saber más o tenés alguna consulta, podés escribir a:
+- juanazorzolo266@gmail.com
+- solrepuestosjaponeses@gmail.com
+
+
 ## 🛠️ Funcionalidades
 
 - Responde preguntas frecuentes (FAQ) sobre:
@@ -35,8 +48,5 @@ chatbot-sol-repuestos/
 
 └── README.md                     # Este archivo
 
-## 📫 Contacto
-Si querés saber más o tenés alguna consulta, podés escribir a:
-- ✉️ solrepuestosjaponeses@gmail.com
 
 💡 Este chatbot fue creado para modernizar la atención al cliente de Sol Repuestos y facilitar el acceso a información útil de manera rápida y automatizada.
