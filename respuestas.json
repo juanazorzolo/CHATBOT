@@ -4,8 +4,8 @@
     "1": "🕗 Estamos abiertos de lunes a viernes de 8:30 a 17:00hs. ¡Te esperamos!",
     "2": "📍 Estamos en San Martín 2489, Rosario. Podes ver la ubicación exacta acá: https://maps.app.goo.gl/hHHnwVGJEH4jSFeB6",
     "3": "💳 Nuestros medios de pago son efectivo, débito y crédito.",
-    "marca_prompt": "🚗 Para poder ayudarte con tu consulta, por favor indicanos la marca de tu vehículo de la siguiente lista:\n1. Toyota\n2. Nissan\n3. Honda\n4. Mitsubishi\n5. Kia",
-    "modelo_prompt": "🔧 Ingresá el modelo del vehículo (año).",
+    "marca_prompt": "🚗 Para poder ayudarte con tu consulta, por favor indicanos la marca de tu vehículo de la siguiente lista:\n1. Toyota\n2. Nissan\n3. Honda\n4. Mitsubishi\n5. Kia\n6. Subaru\n7. Suzuki\n8. Hyundai\n9. Daihatsu\n10. Lexus\n11. Chery\n12. Jac\n13. Mazda\n14. Isuzu",
+    "modelo_prompt": "🔧 Ingresá el modelo de tu vehículo",
     "consulta_derivada": "📨 Gracias por los datos proporcionados. Una persona de nuestro equipo se pondrá en contacto con vos para brindarte una atención personalizada.",
     "otra_consulta": "¿Tenés otra consulta? (si/no)",
     "despedida": "🙌 Muchas gracias por contactarnos. ¡Te esperamos pronto!"
@@ -15,6 +15,15 @@
     "Nissan",
     "Honda",
     "Mitsubishi",
-    "Kia"
+    "Kia",
+    "Subaru",
+    "Suzuki",
+    "Hyundai",
+    "Daihatsu",
+    "Lexus",
+    "Chery",
+    "Jac",
+    "Mazda",
+    "Isuzu"
   ]
 }
